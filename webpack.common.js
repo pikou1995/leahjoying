@@ -33,7 +33,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'leahjoying'
+      template: './src/index.html'
     }),
   ]
 }
