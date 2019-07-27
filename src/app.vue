@@ -1,50 +1,43 @@
 <template>
-  <div id="app">
-    <span id="echo"></span>
-    <span id="heart">
-      <i>爱已生长{{time}}</i>
-    </span>
-  </div>
+  <swiper :options="swiperOption" style="height: 100%;">
+    <swiper-slide>
+      <firstCall />
+    </swiper-slide>
+    <swiper-slide>
+      <heartbeat />
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
+import heartbeat from "./heartbeat.vue";
+import firstCall from "./first-call.vue";
+
 export default {
+  components: {
+    heartbeat,
+    firstCall
+  },
   data() {
     return {
-      startTime: '2019-05-01T18:40:00',
-      now: Date.now(),
-      timeHandler: null,
-    }
-  },
-  computed: {
-    startTimestamp() {
-      return Date.parse(this.startTime)
-    },
-    time() {
-      let delta = this.now - this.startTimestamp
-      let days = Math.floor(delta / 1000 / 60 / 60 / 24)
-      let hours = Math.floor(delta / 1000 / 60 / 60 % 24)
-      let minutes = Math.floor(delta / 1000 / 60 % 60)
-      let seconds = Math.floor(delta / 1000 % 60)
-      return `${days}天${hours}时${minutes}分${seconds}秒`
-    },
-  },
-  methods: {
-    startTick() {
-      this.timeHandler = setInterval(() => {
-        this.now = Date.now()
-      }, 1000)
-    },
-    stopTick() {
-      clearInterval(this.timeHandler)
-    }
-  },
-  mounted() {
-    this.startTick() 
-  },
-}
+      swiperOption: {
+        direction: "vertical"
+      }
+    };
+  }
+};
 </script>
 
 <style>
-@import './heartbeat.css';
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #252c41;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 </style>
