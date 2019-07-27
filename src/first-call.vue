@@ -12,7 +12,7 @@
         <img src="/static/imgs/accept.png" @click="accept" />
       </div>
     </div>
-    <div v-else>
+    <div v-else class="stop-container">
       <div class="stop">
         <img src="/static/imgs/stop.png" @click="stop" />
       </div>
@@ -76,11 +76,17 @@ export default {
 
 <style scoped>
 .reject,
-.accept {
+.accept,
+.stop-container {
   position: absolute;
-  width: 125px;
-  height: 165px;
+  width: 80px;
   bottom: 10%;
+}
+
+.reject img,
+.accept img,
+.stop img {
+  width: 100%;
 }
 
 .reject {
@@ -92,10 +98,14 @@ export default {
 }
 
 .stop {
-  position: absolute;
-  text-align: center;
+  position: relative;
+  width: 80px;
+  margin: auto;
+}
+
+.stop-container,
+.stop img {
   width: 100%;
-  bottom: 10%;
 }
 
 .tips {
