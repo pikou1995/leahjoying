@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <p>爱已生长{{time}}</p>
+    <span id="echo"></span>
+    <span id="heart">
+      <i>爱已生长{{time}}</i>
+    </span>
   </div>
 </template>
 
@@ -41,3 +44,7 @@ export default {
   },
 }
 </script>
+
+<style>
+@import './heartbeat.css';
+</style>
