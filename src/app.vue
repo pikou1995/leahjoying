@@ -1,13 +1,16 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOption" @slideChange="slideChange">
     <swiper-slide>
-      <guard key="0" @next="next" />
+      <guard @next="next" />
     </swiper-slide>
     <swiper-slide>
-      <firstCall key="1" @next="next" v-if="1 <= index" />
+      <firstCall @next="next" v-if="1 <= index" />
     </swiper-slide>
     <swiper-slide>
-      <heartbeat v-if="2 <= index" />
+      <firstMovie @next="next" v-if="2 <= index" />
+    </swiper-slide>
+    <swiper-slide>
+      <heartbeat v-if="3 <= index" />
     </swiper-slide>
   </swiper>
 </template>
@@ -16,12 +19,14 @@
 import guard from "./guard.vue";
 import heartbeat from "./heartbeat.vue";
 import firstCall from "./first-call.vue";
+import firstMovie from "./first-movie.vue";
 
 export default {
   components: {
     guard,
     heartbeat,
-    firstCall
+    firstCall,
+    firstMovie
   },
   data() {
     return {

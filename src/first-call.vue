@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="first-call">
     <div class="tips">
       <p>+86 177 6459 0091</p>
       <p v-if="accepted">{{ currentTime }}</p>
@@ -44,6 +44,11 @@ export default {
       currentTime: "00:00"
     };
   },
+  computed: {
+    audio() {
+      return this.$refs.audio
+    }
+  },
   methods: {
     accept() {
       this.accepted = true;
@@ -55,20 +60,18 @@ export default {
       this.rejected = true;
     },
     play() {
-      let audio = this.$refs.audio;
       this.playHandler = setInterval(() => {
-        let time = Math.ceil(audio.currentTime);
+        let time = Math.ceil(this.audio.currentTime);
         this.currentTime =
           this.padZero(Math.floor(time / 60)) + ":" + this.padZero(time % 60);
       }, 1000);
-      audio.play();
+      this.audio.play();
     },
     stop() {
       if (!this.playHandler) return
       clearInterval(this.playHandler);
-      let audio = this.$refs.audio;
-      audio.pause();
-      audio.currentTime = 0;
+      this.audio.pause();
+      this.audio.currentTime = 0;
       this.ended();
     },
     ended() {
