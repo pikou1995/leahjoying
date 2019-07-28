@@ -5,10 +5,13 @@
       <p v-if="accepted">{{ currentTime }}</p>
     </div>
     <div v-if="!accepted">
+      <inAndOut :start="rejected" @out="rejected = false">
+        <img src="/static/imgs/lost.jpg" />
+      </inAndOut>
       <div class="reject">
         <img src="/static/imgs/reject.png" @click="reject" />
       </div>
-      <div class="accept">
+      <div class="accept animated infinite slower heartBeat">
         <img src="/static/imgs/accept.png" @click="accept" />
       </div>
     </div>
@@ -16,22 +19,26 @@
       <div class="stop">
         <img src="/static/imgs/stop.png" @click="stop" />
       </div>
-      <down v-if="stoped" />
     </div>
+    <down v-if="stoped" />
     <audio ref="audio" src="/static/audio/first_call.mp3" preload @ended="ended"></audio>
   </div>
 </template>
 
 <script>
 import down from "./down.vue";
+import inAndOut from "./in-and-out.vue";
 
 export default {
   components: {
-    down
+    down,
+    inAndOut
   },
   data() {
     return {
       accepted: false,
+      rejected: false,
+      halfHeartBreak: false,
       stoped: false,
       playHandler: null,
       currentTime: "00:00"
@@ -45,7 +52,7 @@ export default {
       }, 1000);
     },
     reject() {
-      // TODO
+      this.rejected = true;
     },
     play() {
       let audio = this.$refs.audio;
@@ -57,14 +64,16 @@ export default {
       audio.play();
     },
     stop() {
-      this.stoped = true;
+      if (!this.playHandler) return
       clearInterval(this.playHandler);
       let audio = this.$refs.audio;
       audio.pause();
       audio.currentTime = 0;
+      this.ended();
     },
     ended() {
       this.stoped = true;
+      this.$emit("next");
       // TODO
     },
     padZero(num) {

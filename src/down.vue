@@ -6,7 +6,7 @@
 
 <style scoped>
 .down {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   text-align: center;
   width: 100%;
