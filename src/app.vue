@@ -1,16 +1,7 @@
 <template>
-  <swiper ref="mySwiper" :options="swiperOption" @slideChange="slideChange">
-    <swiper-slide>
-      <guard @next="next" />
-    </swiper-slide>
-    <swiper-slide>
-      <firstCall @next="next" v-if="1 <= index" />
-    </swiper-slide>
-    <swiper-slide>
-      <firstMovie @next="next" v-if="2 <= index" />
-    </swiper-slide>
-    <swiper-slide>
-      <heartbeat v-if="3 <= index" />
+  <swiper ref="mySwiper" :options="swiperOption" @ready="debug" @slideChange="slideChange">
+    <swiper-slide v-for="(slide, i) in swiperSlides" :key="slide">
+      <component :is="slide" @next="next" v-if="index === i" />
     </swiper-slide>
   </swiper>
 </template>
@@ -30,32 +21,41 @@ export default {
   },
   data() {
     return {
+      swiperSlides: ["guard", "firstCall", "firstMovie", "heartbeat"],
       index: 0,
+      maxIndex: 0,
       swiperOption: {
         direction: "vertical",
         allowSlideNext: false
-      }
+      },
+      debugIndex: 2
     };
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.swiper;
+    },
+    isDebuging() {
+      return process.env.NODE_ENV === "development";
     }
   },
   methods: {
     next() {
-      if (this.swiper.activeIndex === this.index) {
-        this.index++;
+      if (this.swiper.activeIndex === this.maxIndex) {
+        this.maxIndex++;
       }
       this.swiper.allowSlideNext = true;
     },
     slideChange() {
-      this.swiper.allowSlideNext = this.swiper.activeIndex !== this.index;
-    }
-  },
-  watch: {
-    index() {
-      console.log(this.index);
+      this.index = this.swiper.activeIndex;
+      this.swiper.allowSlideNext = this.index !== this.maxIndex;
+    },
+    debug() {
+      if (this.isDebuging && this.debugIndex) {
+        this.swiper.allowSlideNext = true;
+        this.swiper.slideTo(this.debugIndex);
+        this.swiper.allowSlideNext = false;
+      }
     }
   }
 };

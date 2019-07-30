@@ -9,6 +9,4 @@ document.body.appendChild(root);
 
 Vue.use(VueAwesomeSwiper);
 
-new Vue({
-  render: h => h(App)
-}).$mount(root);
+new Vue(App).$mount(root);
