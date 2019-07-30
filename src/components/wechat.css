@@ -141,3 +141,21 @@
   padding: 20px;
   display: block;
 }
+.qqemoji {
+  background: url(/static/imgs/qqemoji.png) 0 0 no-repeat;
+  display: inline-block;
+  zoom: 2;
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
+}
+
+.qqemoji106 {
+  background-position: -24px -168px;
+}
+.qqemoji109 {
+  background-position: -96px -168px;
+}
+.qqemoji75 {
+  background-position: 0 -120px;
+}

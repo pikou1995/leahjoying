@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="forward">
     <!-- preload start -->
     <img src="/static/imgs/avatar.jpg" style="display: none;" />
     <img src="/static/imgs/avatar2.jpg" style="display: none;" />
@@ -62,6 +62,9 @@ export default {
     stop() {
       clearInterval(this.playHandler);
       this.$emit("next");
+    },
+    forward() {
+      this.index++;
     }
   },
   updated() {

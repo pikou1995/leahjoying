@@ -5,7 +5,7 @@ export default [
   },
   {
     type: 1,
-    content: "你喜欢看宠物小精灵吗"
+    content: '你喜欢看宠物小精灵吗<label class="qqemoji qqemoji106"></label>'
   },
   {
     type: 0,
@@ -65,15 +65,17 @@ export default [
   },
   {
     type: 0,
-    content: "我小学的时候还想养只皮卡丘呢，太可爱了"
+    content:
+      '我小学的时候还想养只皮卡丘呢，太可爱了😂'
   },
   {
     type: 1,
-    content: "我还买了精灵球和皮卡丘小人偶"
+    content:
+      '我还买了精灵球和皮卡丘小人偶<label class="qqemoji qqemoji106"></label>'
   },
   {
     type: 0,
-    content: "我好像也买了"
+    content: '<label class="qqemoji qqemoji106"></label>我好像也买了'
   },
   {
     type: 1,
@@ -82,11 +84,12 @@ export default [
   },
   {
     type: 1,
-    content: "今天聊得很开心，可是时间不早了，不能打扰你休息了"
+    content:
+      '今天聊得很开心，可是时间不早了，不能打扰你休息了<label class="qqemoji qqemoji109"></label>'
   },
   {
     type: 1,
-    content: "晚安~"
+    content: '晚安<label class="qqemoji qqemoji75"></label>~'
   },
   {
     type: 0,
@@ -94,6 +97,18 @@ export default [
   },
   {
     type: 0,
-    content: "晚安⭐"
+    content: '晚安⭐'
+  },
+  {
+    type: 1,
+    content: "晚安✨🌟💫"
+  },
+  {
+    type: 1,
+    content: '调皮了一下<label class="qqemoji qqemoji106"></label>'
+  },
+  {
+    type: 0,
+    content: '👻👻👻'
   }
 ];
