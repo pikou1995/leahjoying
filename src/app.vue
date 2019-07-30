@@ -1,5 +1,6 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOption" @ready="debug" @slideChange="slideChange">
+    <preloadImgs v-if="index === 0" />
     <swiper-slide v-for="(slide, i) in swiperSlides" :key="slide">
       <component :is="slide" @next="next" v-if="index === i" />
     </swiper-slide>
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+import preloadImgs from "./preload-imgs.vue";
 import guard from "./guard.vue";
 import heartbeat from "./heartbeat.vue";
 import firstCall from "./first-call.vue";
@@ -14,6 +16,7 @@ import firstMovie from "./first-movie.vue";
 
 export default {
   components: {
+    preloadImgs,
     guard,
     heartbeat,
     firstCall,
@@ -28,7 +31,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 2
+      // debugIndex: 2
     };
   },
   computed: {
