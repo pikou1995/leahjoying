@@ -21,13 +21,13 @@
       </div>
     </div>
     <down v-if="stoped" />
-    <audio ref="audio" src="/static/audio/first_call.mp3" preload @ended="ended"></audio>
+    <audio ref="audio" src="/static/audio/first_call.mp3" @ended="ended"></audio>
   </div>
 </template>
 
 <script>
-import down from "./down.vue";
-import inAndOut from "./in-and-out.vue";
+import down from "./components/down.vue";
+import inAndOut from "./components/in-and-out.vue";
 
 export default {
   components: {

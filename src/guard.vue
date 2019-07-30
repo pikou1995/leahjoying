@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import down from "./down.vue";
+import down from "./components/down.vue";
 
 export default {
   components: {

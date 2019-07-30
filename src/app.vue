@@ -52,6 +52,7 @@ export default {
     },
     debug() {
       if (this.isDebuging && this.debugIndex) {
+        this.maxIndex = this.debugIndex;
         this.swiper.allowSlideNext = true;
         this.swiper.slideTo(this.debugIndex);
         this.swiper.allowSlideNext = false;

@@ -1,0 +1,143 @@
+.phone-wrap {
+  transform-origin: top left;
+  transform: scale(0.5);
+}
+.iphone {
+  position: absolute;
+  width: 828px;
+  height: 1792px;
+  background-color: #ebebeb;
+  overflow: hidden;
+  color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: Arial, "微软雅黑";
+}
+
+.i-body {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.i-b-time {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.i-b-time span {
+  color: #aaa;
+  font-size: 22px;
+  max-width: 50%;
+}
+
+.i-b-rec-text,
+.i-b-sen-text {
+  margin: 40px 52px 0 20px;
+  position: relative;
+}
+.i-b-sen-text {
+  margin: 40px 20px 0 46px;
+}
+.i-b-rec-text:after,
+.i-b-sen-text:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.i-b-rec-text img,
+.i-b-sen-text img {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  left: 0;
+  top: 0;
+  background: #fff;
+  border-radius: 10%;
+}
+.i-b-sen-text img {
+  left: auto;
+  right: 0;
+}
+.i-b-rec-text img.img_qq,
+.i-b-sen-text img.img_qq {
+  border-radius: 4rem;
+}
+.i-b-rec-text img.qq_emoji,
+.i-b-sen-text img.qq_emoji {
+  position: static;
+  width: 48px;
+  height: 48px;
+  vertical-align: bottom;
+  background: none;
+}
+.i-b-rec-text div,
+.i-b-sen-text div {
+  position: relative;
+  margin-left: 82px;
+  margin-right: 50px;
+  text-align: initial;
+}
+.i-b-sen-text div {
+  margin-left: 50px;
+  margin-right: 82px;
+}
+.i-b-rec-text div p,
+.i-b-sen-text div p {
+  font-size: 22px;
+  color: #888;
+  padding: 0;
+  margin: 0;
+  padding-left: 30px;
+  display: none;
+  position: relative;
+  top: -5px;
+  margin-bottom: -2px;
+}
+.i-b-sen-text div p {
+  text-align: right;
+  padding: 0;
+  padding-right: 30px;
+}
+.i-b-rec-text div i,
+.i-b-sen-text div i {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url(/static/imgs/rec-txt-bg.png) 1px -31px no-repeat;
+  left: -24px;
+  top: 27px;
+}
+.i-b-sen-text div i {
+  background: url(/static/imgs/sen-txt-bg.png) right -31px no-repeat;
+  left: auto;
+  right: -24px;
+}
+.i-b-rec-text div span,
+.i-b-sen-text div span {
+  float: left;
+  min-height: 80px;
+  min-width: 96px;
+  margin-left: 24px;
+  font-size: 28px;
+  border: 1px #ccc solid;
+  background: #fafafa;
+  border-radius: 10px;
+  position: relative;
+}
+.i-b-sen-text div span {
+  background: #9ce553;
+  border-color: #7ac754;
+  float: right;
+  margin-left: 0;
+  margin-right: 24px;
+}
+.i-b-rec-text div span em,
+.i-b-sen-text div span em {
+  font-style: normal;
+  padding: 20px;
+  display: block;
+}
