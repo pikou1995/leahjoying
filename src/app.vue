@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { isDebuging } from "./utils";
 import preloadImgs from "./preload-imgs.vue";
 import guard from "./guard.vue";
 import heartbeat from "./heartbeat.vue";
@@ -45,7 +46,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 5
+      debugIndex: 6
     };
   },
   computed: {
@@ -53,7 +54,7 @@ export default {
       return this.$refs.mySwiper.swiper;
     },
     isDebuging() {
-      return process.env.NODE_ENV === "development";
+      return isDebuging();
     }
   },
   methods: {
