@@ -12,6 +12,7 @@
 
 <script>
 import ANIMATE_CLASSNAMES from "./animateClassNames";
+import { randomIndex } from "./utils";
 
 export default {
   data() {
@@ -58,9 +59,8 @@ export default {
       clearInterval(this.timeHandler);
     },
     easterEgg() {
-      this.animateIndex = Math.floor(
-        Math.random() * this.animateClassNames.length
-      );
+      let i = randomIndex(this.animateClassNames.length);
+      this.animateIndex = i === this.animateIndex ? this.easterEgg() : i;
     }
   },
   mounted() {
