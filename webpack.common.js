@@ -23,6 +23,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"]
+      },
+      {
+        test: /.(jpg|png|gif)$/i,
+        loader: "ignore-loader"
       }
     ]
   },
