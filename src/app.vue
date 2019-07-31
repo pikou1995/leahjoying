@@ -2,7 +2,7 @@
   <swiper ref="mySwiper" :options="swiperOption" @ready="debug" @slideChange="slideChange">
     <preloadImgs v-if="index === 0" />
     <swiper-slide v-for="(slide, i) in swiperSlides" :key="slide">
-      <component :is="slide" @next="next" v-if="index === i" />
+      <component :is="slide" @next="next" v-if="index === i" :debug="isDebuging" />
     </swiper-slide>
   </swiper>
 </template>
@@ -15,6 +15,7 @@ import firstCall from "./first-call.vue";
 import firstMovie from "./first-movie.vue";
 import firstMovieTheater from "./first-movie-theater.vue";
 import firstMovieConservation from "./first-movie-conservation.vue";
+import toBeContinued from "./to-be-continued.vue";
 
 export default {
   components: {
@@ -24,7 +25,8 @@ export default {
     firstCall,
     firstMovie,
     firstMovieTheater,
-    firstMovieConservation
+    firstMovieConservation,
+    toBeContinued
   },
   data() {
     return {
@@ -34,6 +36,7 @@ export default {
         "firstMovie",
         "firstMovieConservation",
         "firstMovieTheater",
+        "toBeContinued",
         "heartbeat"
       ],
       index: 0,
@@ -42,7 +45,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 2
+      debugIndex: 5
     };
   },
   computed: {

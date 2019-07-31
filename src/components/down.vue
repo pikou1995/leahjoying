@@ -1,6 +1,8 @@
 <template>
   <div class="down">
-    <img src="/static/imgs/down.png" />
+    <slot>
+      <img src="/static/imgs/down.png" />
+    </slot>
   </div>
 </template>
 
@@ -10,11 +12,11 @@
   bottom: 0;
   text-align: center;
   width: 100%;
-  animation: dianhuo 2s linear infinite alternate;
 }
 
 .down img {
   width: 30px;
+  animation: dianhuo 2s linear infinite alternate;
 }
 
 @keyframes dianhuo {

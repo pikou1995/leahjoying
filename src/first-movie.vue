@@ -5,7 +5,7 @@
       <img
         src="/static/imgs/remember.png"
         class="animated"
-        :class="{'rubberBand infinite': answer === 'remember', bounceOutDown: answer === 'forget'}"
+        :class="{'tada infinite': answer === 'remember', bounceOutDown: answer === 'forget'}"
         @click="remember"
       />
       <img
@@ -47,6 +47,9 @@ export default {
 .question {
   margin-top: 40%;
   text-align: center;
+}
+.question p {
+  margin-bottom: 10%;
 }
 .question img {
   width: 40%;

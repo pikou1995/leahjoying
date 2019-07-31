@@ -1,9 +1,12 @@
 <template>
-  <div>
-    <span id="echo"></span>
-    <span id="heart">
-      <i>爱已生长{{time}}</i>
-    </span>
+  <div class="heartbeat">
+    <div class="heart-container animated zoomIn">
+      <span id="echo"></span>
+      <span id="heart">
+        <i>在一起的{{time}}</i>
+      </span>
+    </div>
+    <down>Love © 2019 - forever Pikou💕Ling</down>
   </div>
 </template>
 
@@ -11,40 +14,40 @@
 export default {
   data() {
     return {
-      startTime: '2019-05-01T18:40:00',
+      startTime: "2019-05-01T18:40:00",
       now: Date.now(),
-      timeHandler: null,
-    }
+      timeHandler: null
+    };
   },
   computed: {
     startTimestamp() {
-      return Date.parse(this.startTime)
+      return Date.parse(this.startTime);
     },
     time() {
-      let delta = this.now - this.startTimestamp
-      let days = Math.floor(delta / 1000 / 60 / 60 / 24)
-      let hours = Math.floor(delta / 1000 / 60 / 60 % 24)
-      let minutes = Math.floor(delta / 1000 / 60 % 60)
-      let seconds = Math.floor(delta / 1000 % 60)
-      return `${days}天${hours}时${minutes}分${seconds}秒`
-    },
+      let delta = this.now - this.startTimestamp;
+      let days = Math.floor(delta / 1000 / 60 / 60 / 24);
+      let hours = Math.floor((delta / 1000 / 60 / 60) % 24);
+      let minutes = Math.floor((delta / 1000 / 60) % 60);
+      let seconds = Math.floor((delta / 1000) % 60);
+      return `${days}天${hours}时${minutes}分${seconds}秒`;
+    }
   },
   methods: {
     startTick() {
       this.timeHandler = setInterval(() => {
-        this.now = Date.now()
-      }, 1000)
+        this.now = Date.now();
+      }, 1000);
     },
     stopTick() {
-      clearInterval(this.timeHandler)
+      clearInterval(this.timeHandler);
     }
   },
   mounted() {
-    this.startTick() 
-  },
-}
+    this.startTick();
+  }
+};
 </script>
 
 <style scoped>
-@import './heartbeat.css';
+@import "./heartbeat.css";
 </style>

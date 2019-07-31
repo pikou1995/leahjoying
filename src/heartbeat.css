@@ -1,3 +1,8 @@
+.heartbeat,
+.heart-container {
+  height: 100%;
+}
+
 @media screen and (max-width: 768px) {
   #heart,
   #echo {
