@@ -46,7 +46,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 6
+      debugIndex: 3
     };
   },
   computed: {

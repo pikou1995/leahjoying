@@ -79,8 +79,8 @@ export default {
     container.scrollTop = container.scrollHeight;
   },
   created() {
-    this.width = screen.width;
-    this.height = screen.height;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
   },
   mounted() {
     this.play();
