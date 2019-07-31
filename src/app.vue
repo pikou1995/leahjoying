@@ -13,6 +13,8 @@ import guard from "./guard.vue";
 import heartbeat from "./heartbeat.vue";
 import firstCall from "./first-call.vue";
 import firstMovie from "./first-movie.vue";
+import firstMovieTheater from "./first-movie-theater.vue";
+import firstMovieConservation from "./first-movie-conservation.vue";
 
 export default {
   components: {
@@ -20,18 +22,27 @@ export default {
     guard,
     heartbeat,
     firstCall,
-    firstMovie
+    firstMovie,
+    firstMovieTheater,
+    firstMovieConservation
   },
   data() {
     return {
-      swiperSlides: ["guard", "firstCall", "firstMovie", "heartbeat"],
+      swiperSlides: [
+        "guard",
+        "firstCall",
+        "firstMovie",
+        "firstMovieConservation",
+        "firstMovieTheater",
+        "heartbeat"
+      ],
       index: 0,
       maxIndex: 0,
       swiperOption: {
         direction: "vertical",
         allowSlideNext: false
       },
-      // debugIndex: 2
+      debugIndex: 2
     };
   },
   computed: {

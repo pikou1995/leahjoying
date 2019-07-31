@@ -17,11 +17,11 @@ export default {
       if (!this.start) return;
       setTimeout(() => {
         this.readyToOut = true;
-      }, 3000);
+      }, 2000);
       setTimeout(() => {
         this.$emit("out");
         this.readyToOut = false;
-      }, 6000);
+      }, 3000);
     }
   }
 };

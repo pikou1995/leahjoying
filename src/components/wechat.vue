@@ -1,11 +1,7 @@
 <template>
   <div @click="forward">
-    <!-- preload start -->
-    <img src="/static/imgs/avatar.jpg" style="display: none;" />
-    <img src="/static/imgs/avatar2.jpg" style="display: none;" />
-    <!-- preload end -->
-    <div class="phone-wrap">
-      <div class="iphone" ref="container">
+    <div class="phone-wrap" :style="{transform: scale}">
+      <div class="iphone" ref="container" :style="{height: originHeight}">
         <div class="i-body">
           <template v-for="(item, i) in playedConservation">
             <div v-if="item.type === 2" class="i-b-time" :key="i">
@@ -42,12 +38,23 @@ export default {
   data() {
     return {
       playHandler: null,
-      index: 0
+      index: 0,
+      width: 414,
+      height: 896
     };
   },
   computed: {
     playedConservation() {
       return this.conservation.slice(0, this.index);
+    },
+    ratio() {
+      return (0.5 * this.width) / 414;
+    },
+    scale() {
+      return `scale(${this.ratio})`;
+    },
+    originHeight() {
+      return this.height / this.ratio + "px";
     }
   },
   methods: {
@@ -70,6 +77,10 @@ export default {
   updated() {
     let container = this.$refs.container;
     container.scrollTop = container.scrollHeight;
+  },
+  created() {
+    this.width = screen.width;
+    this.height = screen.height;
   },
   mounted() {
     this.play();

@@ -1,36 +1,47 @@
 <template>
-  <div style="text-align: center;">
-    <p>
-      <button v-if="step === 0" @click="check">是你吗???</button>
-      <button v-if="step === 1" @click="check">真的是你吗???</button>
-      <button v-if="step === 2" @click="check">你知道我说的是谁吗???</button>
-    </p>
+  <div class="guard" :class="{wait: step === 0}">
+    <button v-if="step === 1" @click="next">是你吗???</button>
+    <button v-if="step === 2" @click="next">真的是你吗???</button>
+    <button v-if="step === 3" @click="end">你知道我说的是谁吗???</button>
     <p v-if="accesible">真的是你呀!!!</p>
     <down v-if="accesible" />
   </div>
 </template>
 
 <script>
-import down from "./components/down.vue";
-
 export default {
-  components: {
-    down
-  },
   data() {
     return {
-      accesible: false,
-      step: 0
+      step: 0,
+      accesible: false
     };
   },
   methods: {
-    check() {
-      if (this.step >= 2) {
-        this.accesible = true;
-        this.$emit("next");
-      }
+    next() {
       this.step++;
+    },
+    end() {
+      this.next();
+      this.accesible = true;
+      this.$emit("next");
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.next();
+    }, 1000);
   }
 };
 </script>
+
+<style scoped>
+.guard.wait {
+  background-color: #fff;
+}
+.guard {
+  height: 100%;
+  padding-top: 100%;
+  text-align: center;
+  transition: background 2s;
+}
+</style>

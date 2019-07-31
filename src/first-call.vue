@@ -26,12 +26,10 @@
 </template>
 
 <script>
-import down from "./components/down.vue";
 import inAndOut from "./components/in-and-out.vue";
 
 export default {
   components: {
-    down,
     inAndOut
   },
   data() {
