@@ -7,13 +7,14 @@
         <ai @click="step = 5" class="wobble" v-if="step === 4" />
         <ai @click="step = 6" class="shake" v-if="step === 5" />
         <ai @click="end" class="bounce" v-if="step === 6" />
-        <ai class="bounceOutDown" v-if="accesible" />
+        <ai class="bounceOutDown slower" v-if="accesible" />
       </p>
-      <p class="animated fadeIn slow delay-1s">我是被封印在这里的猪猪型AI</p>
-      <p class="animated fadeIn slow delay-2s">在这里守护着主人和他最心爱的女孩的回忆</p>
-      <p class="animated fadeIn slow delay-3s">我的使命就是带你去看那些回忆</p>
-      <p class="animated fadeIn slow delay-4s">请先帮我解除封印吧~</p>
-      <p class="animated fadeIn slow delay-5s">(要怎么解除封印呢？请开动你的小脑筋找找机关吧~)</p>
+      <p class="animated fadeIn slow delay-1s">我是猪猪型AI，一直守护在这里</p>
+      <p class="animated fadeIn slow delay-2s">这里保存着主人和他最心爱女孩的回忆</p>
+      <p class="animated fadeIn slow delay-3s">我的使命就是带你去找回那些回忆</p>
+      <p class="animated fadeIn slow delay-4s">但是我不小心碰到机关被困住了</p>
+      <p class="animated fadeIn slow delay-5s">请先帮我解除封印吧~</p>
+      <p class="animated fadeIn slow delay-5s">(要怎么解除封印呢？请开动你的小脑筋找到机关吧~)</p>
     </div>
     <down v-if="accesible" />
   </div>
