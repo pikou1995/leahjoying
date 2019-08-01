@@ -1,10 +1,15 @@
 <template>
   <div class="questions">
     <div class="tips">
-      <p class="animated fadeIn">服了服了，这果然难不倒你🐷</p>
-      <p class="animated fadeIn delay-1s">读取记忆内核中...</p>
-      <p class="animated fadeIn delay-2s">读取失败，发现一些问题必需要解决</p>
-      <p class="animated fadeIn delay-3s">下面是这些“正经的”问题，急需你帮助破解🙇‍</p>
+      <p class="animated fadeIn">
+        谢谢你，你真棒~那接下来就看我的啦
+        <ai :class="fullCheck ? 'bounceOutDown slow' : 'bounceInDown'" />
+      </p>
+      <p class="animated fadeIn delay-1s">开始读取记忆内核🧐</p>
+      <p class="animated fadeIn delay-2s">......</p>
+      <p class="animated fadeIn delay-3s">读取失败⚠️</p>
+      <p class="animated fadeIn delay-4s">发现一些问题，需要先破解这些问题😳</p>
+      <p class="animated fadeIn delay-5s">下面是这些“正经的”问题🤔</p>
     </div>
     <div v-if="step === 1" :key="question.content">
       <p class="animated fadeIn">{{question.content}}</p>
@@ -42,16 +47,27 @@ export default {
       step: 0,
       questions: [
         {
-          content: "下面哪些是必须的？",
-          options: ["坚持练字和健身", "	定期存款", "的士和高德打车", "爱爱"]
+          content: "下面哪些电影我们去电影院看过？",
+          options: [
+            "大侦探皮卡丘",
+            "阿拉丁",
+            "哥斯拉2",
+            "最好的我们",
+            "黑衣人：全球追缉",
+            "千与千寻"
+          ]
         },
         {
-          content: "下面哪些不可缺少？",
+          content: "下面哪些是相处的重要组成部分？",
+          options: ["挠痒痒", "幽默风趣", "愿景规划", "期望管理"]
+        },
+        {
+          content: "下面哪些不可或缺？",
           options: ["多喝热水", "点都德", "耐用的面霜", "心里话"]
         },
         {
-          content: "下面哪些如果有的话就更好了？",
-          options: ["幽默", "规划"]
+          content: "下面哪些是必须的？",
+          options: ["坚持练字和健身", "定期存款", "的士和高德打车", "爱爱"]
         }
       ],
       answers: [],
@@ -104,7 +120,7 @@ export default {
     this.initAnswers();
     setTimeout(() => {
       this.step = 1;
-    }, 4000);
+    }, 6000);
   }
 };
 </script>
@@ -112,7 +128,7 @@ export default {
 <style scoped>
 .questions {
   height: 100%;
-  padding-top: 40%;
+  padding-top: 10%;
   text-align: center;
 }
 .questions .tips {
