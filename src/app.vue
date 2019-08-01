@@ -11,6 +11,7 @@
 import { isDebuging } from "./utils";
 import preloadImgs from "./preload-imgs.vue";
 import guard from "./guard.vue";
+import questions from "./questions.vue";
 import heartbeat from "./heartbeat.vue";
 import firstCall from "./first-call.vue";
 import firstMovie from "./first-movie.vue";
@@ -22,6 +23,7 @@ export default {
   components: {
     preloadImgs,
     guard,
+    questions,
     heartbeat,
     firstCall,
     firstMovie,
@@ -33,6 +35,7 @@ export default {
     return {
       swiperSlides: [
         "guard",
+        "questions",
         "firstCall",
         "firstMovie",
         "firstMovieConservation",
@@ -46,7 +49,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 6
+      debugIndex: 1
     };
   },
   computed: {

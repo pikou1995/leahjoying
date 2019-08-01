@@ -1,9 +1,16 @@
 <template>
   <div class="guard" :class="{white: step === 0, black: step === 1}">
-    <button class="animated fadeIn slow" v-if="step === 3" @click="next">你是怎么来到这里的呀？</button>
-    <button class="animated fadeIn" v-if="step === 4" @click="next">这里保存着我和我最心爱的女孩的回忆</button>
-    <button class="animated fadeIn" v-if="step === 5" @click="end">你知道我说的是谁吗？</button>
-    <p v-if="accesible">原来是你呀！</p>
+    <div v-if="step === 3">
+      <p class="animated fadeIn">
+        终于等到你！
+        <span @click="end">🐷</span>
+      </p>
+      <p class="animated fadeIn delay-1s">这里保存着我和我最心爱的女孩的回忆</p>
+      <p class="animated fadeIn delay-2s">我已经迫不及待的想带你去看了</p>
+      <p class="animated fadeIn delay-3s">但是那么轻易的给你看我岂不是很没面子</p>
+      <p class="animated fadeIn delay-4s">所以我设置了一些障碍</p>
+      <p class="animated fadeIn delay-5s">等着你去探索吧~</p>
+    </div>
     <down v-if="accesible" />
   </div>
 </template>
@@ -14,6 +21,7 @@ export default {
   data() {
     return {
       step: 0,
+      // debugStep: 3,
       accesible: false
     };
   },
@@ -22,11 +30,10 @@ export default {
       this.step++;
     },
     end() {
-      this.next();
       this.accesible = true;
       this.$emit("next");
     },
-    delay() {
+    delay(time = 5000) {
       return new Promise(resolve => {
         setTimeout(
           () => {
@@ -39,6 +46,10 @@ export default {
     }
   },
   async mounted() {
+    if (this.debug && this.debugStep) {
+      this.step = this.debugStep;
+      return;
+    }
     await this.delay();
     await this.delay();
     await this.delay();
@@ -56,7 +67,7 @@ export default {
 
 .guard {
   height: 100%;
-  padding-top: 100%;
+  padding-top: 80%;
   text-align: center;
   transition: background 5s;
 }
