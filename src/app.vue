@@ -49,7 +49,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      // debugIndex: 1
+      debugIndex: 6
     };
   },
   computed: {

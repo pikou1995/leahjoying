@@ -1,8 +1,8 @@
 <template>
   <div class="to-be-continue">
-    <p>开始很美好</p>
-    <p>过程很曲折</p>
-    <p>但故事还在继续</p>
+    <p class="animated fadeIn">开始很美好</p>
+    <p class="animated fadeIn delay-2s">过程很曲折</p>
+    <p class="animated fadeIn delay-4s">但我们并没有停下脚步</p>
     <down></down>
   </div>
 </template>

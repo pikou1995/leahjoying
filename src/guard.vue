@@ -9,11 +9,11 @@
         <ai @click="end" class="bounce" v-if="step === 6" />
         <ai class="bounceOutDown" v-if="accesible" />
       </p>
-      <p class="animated fadeIn delay-1s">我是被封印在这里的猪猪型AI</p>
-      <p class="animated fadeIn delay-2s">在这里守护着主人和他最心爱的女孩的回忆</p>
-      <p class="animated fadeIn delay-3s">我已经迫不及待的想带你去看了</p>
-      <p class="animated fadeIn delay-4s">请先帮我解除封印吧~</p>
-      <p class="animated fadeIn delay-5s">(要怎么解除封印呢？请开动你的小脑筋找找机关吧~)</p>
+      <p class="animated fadeIn slow delay-1s">我是被封印在这里的猪猪型AI</p>
+      <p class="animated fadeIn slow delay-2s">在这里守护着主人和他最心爱的女孩的回忆</p>
+      <p class="animated fadeIn slow delay-3s">我的使命就是带你去看那些回忆</p>
+      <p class="animated fadeIn slow delay-4s">请先帮我解除封印吧~</p>
+      <p class="animated fadeIn slow delay-5s">(要怎么解除封印呢？请开动你的小脑筋找找机关吧~)</p>
     </div>
     <down v-if="accesible" />
   </div>
@@ -71,7 +71,7 @@ export default {
 }
 .guard {
   height: 100%;
-  padding-top: 70%;
+  padding-top: 60%;
   text-align: center;
   transition: background 5s;
 }

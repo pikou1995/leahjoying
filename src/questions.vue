@@ -3,7 +3,7 @@
     <div class="tips">
       <p class="animated fadeIn">
         谢谢你，你真棒~那接下来就看我的啦
-        <ai :class="fullCheck ? 'bounceOutDown slow' : 'bounceInDown'" />
+        <ai :class="fullCheck ? 'bounceOutDown slower' : 'bounceInDown'" />
       </p>
       <p class="animated fadeIn delay-1s">开始读取记忆内核🧐</p>
       <p class="animated fadeIn delay-2s">......</p>
