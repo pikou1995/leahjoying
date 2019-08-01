@@ -17,7 +17,7 @@ import { randomIndex } from "./utils";
 export default {
   data() {
     return {
-      startTime: "2019-05-01T18:40:00",
+      startTime: "2019-05-01T19:00:00",
       now: Date.now(),
       timeHandler: null,
       animateIndex: -1
