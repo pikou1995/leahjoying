@@ -5,11 +5,11 @@
         谢谢你，你真厉害~
         <ai :class="fullCheck ? 'bounceOutDown slower' : 'bounceInDown'" />
       </p>
-      <p class="animated fadeIn slow delay-1s">接下来就交给我吧💪</p>
-      <p class="animated fadeIn slow delay-2s">开始读取记忆内核🧐......</p>
-      <p class="animated fadeIn slow delay-3s">对不起，读取失败了😭</p>
-      <p class="animated fadeIn slow delay-4s">发现一些问题，需要先破解这些问题😳</p>
-      <p class="animated fadeIn slow delay-5s">下面是“很正经的”问题😂</p>
+      <p class="animated fadeIn slower delay-1s">接下来就交给我吧💪</p>
+      <p class="animated fadeIn slower delay-2s">开始读取记忆内核🧐......</p>
+      <p class="animated bounceIn slow delay-4s">对不起，读取失败了😭</p>
+      <p class="animated fadeIn slower delay-5s">发现一些问题，需要先破解这些问题😳</p>
+      <p class="animated fadeIn slower delay-6s">下面是“很正经的”问题😂</p>
     </div>
     <div v-if="step === 1" :key="question.content">
       <p class="animated fadeIn">{{question.content}}</p>
@@ -30,7 +30,7 @@
         <p class="animated tada">破解成功啦！🎉🎉🎉</p>
         <p>已成功打开内核，现在我们去看看吧</p>
       </div>
-      <div v-else>
+      <div class="animated bounceIn slow" v-else>
         <p>破解失败了，请不要灰心🙂</p>
         <p>
           试试
@@ -123,7 +123,7 @@ export default {
     this.initAnswers();
     setTimeout(() => {
       this.step = 1;
-    }, 6000);
+    }, 7000);
   }
 };
 </script>

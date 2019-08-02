@@ -14,6 +14,6 @@ Vue.use(VueAwesomeSwiper);
 Vue.component("down", Down);
 Vue.component("ai", Ai);
 
-const showHeart = location.pathname === "/heart";
+const showHeart = location.pathname !== "/";
 
 new Vue(showHeart ? HeartBeat : App).$mount(root);

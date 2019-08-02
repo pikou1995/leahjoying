@@ -8,20 +8,24 @@
         playsinline
         webkit-playsinline
         class="animated zoomIn"
-        :class="{hide: !videoPlayed}"
         src="/static/video/first_movie.mp4"
+        :class="{hide: !videoPlayed}"
         @play="startPlaying"
         @ended="ended"
       ></video>
       <img v-if="!fallingLove" src="/static/imgs/movie-seats.jpg" />
       <img
         v-else
-        class="animated heartBeat slower"
-        :class="{infinite: videodEnded}"
+        class="animated heartBeat slow"
         src="/static/imgs/movie-seats-love.jpg"
       />
     </div>
-    <div v-if="videodEnded">那时第一次鼓起勇气牵了你的手，现在想起来依然会心跳加速^_^</div>
+    <div class="tc" v-if="videodEnded">
+      <p class="animated fadeIn slower">那时第一次鼓起勇气牵了你的手</p>
+      <p class="animated fadeIn slower delay-2s">现在想起来依然会心跳加速
+        <span class="animated heartBeat fast infinite">❤️</span>
+      </p>
+    </div>
     <down v-if="videodEnded" />
   </div>
 </template>

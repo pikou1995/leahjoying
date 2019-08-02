@@ -1,20 +1,25 @@
 <template>
   <div class="guard" :class="{white: step === 0, black: step === 1}">
     <div v-if="step >= 3">
-      <p class="animated fadeIn">
+      <p class="animated fadeIn slower">
         终于等到你！
-        <ai @click="step = 4" class="flash" v-if="step === 3" />
+        <ai @click="step = 4" class="flash delay-1s" v-if="step === 3" />
         <ai @click="step = 5" class="wobble" v-if="step === 4" />
         <ai @click="step = 6" class="shake" v-if="step === 5" />
         <ai @click="end" class="bounce" v-if="step === 6" />
         <ai class="bounceOutDown slower" v-if="accesible" />
       </p>
-      <p class="animated fadeIn slow delay-1s">我是猪猪型AI，一直守护在这里</p>
-      <p class="animated fadeIn slow delay-2s">这里保存着主人和他最心爱女孩的回忆</p>
-      <p class="animated fadeIn slow delay-3s">我的使命就是带你去找回那些回忆</p>
-      <p class="animated fadeIn slow delay-4s">但是我不小心碰到机关被困住了</p>
-      <p class="animated fadeIn slow delay-5s">请先帮我解除封印吧~</p>
-      <p class="animated fadeIn slow delay-5s">(要怎么解除封印呢？请开动你的小脑筋找到机关吧~)</p>
+      <p class="animated fadeIn slower delay-2s">我是猪猪型AI，一直守护在这里</p>
+      <p class="animated fadeIn slower delay-3s">
+        这里保存着主人和他
+        <span class="animated heartBeat delay-3s">最心爱女孩</span>
+        的
+        <span class="animated fadeInRight delay-4s">回忆</span>
+      </p>
+      <p class="animated fadeIn slower delay-5s">我的使命就是带你去找到那些回忆</p>
+      <p class="animated fadeIn slower delay-6s">但是我不小心碰到机关被困住了</p>
+      <p class="animated fadeIn slower delay-7s">请先帮我解除封印吧~</p>
+      <p class="animated fadeIn slower delay-8s">(要怎么解除封印呢？请开动你的小脑筋找到机关吧~)</p>
     </div>
     <down v-if="accesible" />
   </div>

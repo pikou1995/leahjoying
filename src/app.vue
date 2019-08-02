@@ -49,7 +49,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 6
+      debugIndex: 2
     };
   },
   computed: {
@@ -97,5 +97,44 @@ body {
   color: #fff;
   font-size: 1rem;
   line-height: 1.4;
+}
+.h100 {
+  height: 100%;
+}
+.pt30 {
+  padding-top: 30%;
+}
+.tc {
+  text-align: center;
+}
+span.animated {
+  display: inline-block;
+}
+.delay-6s {
+  animation-delay: 6s;
+}
+.delay-7s {
+  animation-delay: 7s;
+}
+.delay-8s {
+  animation-delay: 8s;
+}
+.delay-9s {
+  animation-delay: 9s;
+}
+.delay-10s {
+  animation-delay: 10s;
+}
+.delay-11s {
+  animation-delay: 11s;
+}
+.delay-12s {
+  animation-delay: 12s;
+}
+.delay-13s {
+  animation-delay: 13s;
+}
+.delay-14s {
+  animation-delay: 14s;
 }
 </style>

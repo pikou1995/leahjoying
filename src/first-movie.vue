@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="question">
-      <p>还记得第一次看电影的时候吗?</p>
+      <p>还记得第一次看电影的时候吗？</p>
       <img
         src="/static/imgs/remember.png"
         class="animated"
