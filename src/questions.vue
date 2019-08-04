@@ -2,14 +2,14 @@
   <div class="questions">
     <div class="tips">
       <p class="animated fadeIn">
-        谢谢你，你真厉害~
-        <ai :class="fullCheck ? 'bounceOutDown slower' : 'bounceInDown'" />
+        谢谢你，你果然是我在等的那个有缘人！
+        <ai :class="fullCheck ? 'bounceOutRight' : 'bounceInDown'" />
       </p>
-      <p class="animated fadeIn slower delay-1s">接下来就交给我吧💪</p>
+      <p class="animated fadeIn slower delay-1s">接下来就交给我吧！急急如律令~💪</p>
       <p class="animated fadeIn slower delay-2s">开始读取记忆内核🧐......</p>
-      <p class="animated bounceIn slow delay-4s">对不起，读取失败了😭</p>
-      <p class="animated fadeIn slower delay-5s">发现一些问题，需要先破解这些问题😳</p>
-      <p class="animated fadeIn slower delay-6s">下面是“很正经的”问题😂</p>
+      <p class="animated bounceIn slow delay-5s">奇怪了，竟然读取失败了😭</p>
+      <p class="animated fadeIn slower delay-6s">咦？？？发现一些“很正经的”问题😳</p>
+      <p class="animated fadeIn slower delay-7s">好像只有有缘人才能解答呢😂</p>
     </div>
     <div v-if="step === 1" :key="question.content">
       <p class="animated fadeIn">{{question.content}}</p>
@@ -22,19 +22,24 @@
       <p>
         <button v-if="hasPreQuestion" @click="preQuestion" style="float: left;">&lt;上一题</button>
         <button v-if="hasNextQuestion" @click="nextQuestion" style="float: right;">下一题&gt;</button>
-        <button v-if="!hasNextQuestion" @click="submit" style="float: right;">开始破解</button>
+        <button v-if="!hasNextQuestion" @click="submit" style="float: right;">提交答案</button>
       </p>
     </div>
     <div v-if="step === 2">
       <div v-if="fullCheck">
-        <p class="animated tada">破解成功啦！🎉🎉🎉</p>
-        <p>已成功打开内核，现在我们去看看吧</p>
+        <p class="animated tada">记忆内核打开啦！🎉🎉🎉</p>
+        <p>
+          我只能陪你到这儿啦
+          <ai class="animated bounceInRight"></ai>
+        </p>
+        <p class="animated fadeIn delay-2s">接下来还要继续守在这里呢~</p>
+        <p class="animated fadeIn delay-4s">咕力白，祝你一路幸福哟~</p>
       </div>
       <div class="animated bounceIn slow" v-else>
-        <p>破解失败了，请不要灰心🙂</p>
+        <p>记忆内核好像不认可这份答案呢，请不要灰心🙂</p>
         <p>
           试试
-          <button @click="retry">重新破解</button>
+          <button @click="retry">重新解答</button>
         </p>
       </div>
     </div>
@@ -123,7 +128,7 @@ export default {
     this.initAnswers();
     setTimeout(() => {
       this.step = 1;
-    }, 7000);
+    }, 8000);
   }
 };
 </script>
