@@ -33,14 +33,6 @@
   }
 }
 
-#heart::after {
-  box-shadow: 15px 3px 20px 0px rgba(255, 255, 255, 0.1);
-}
-
-#heart::before {
-  box-shadow: -15px -3px 20px 0px rgba(255, 255, 255, 0.1);
-}
-
 #heart::before,
 #heart::after,
 #echo::before,

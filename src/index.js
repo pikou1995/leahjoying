@@ -5,7 +5,7 @@ import Down from "./components/down.vue";
 import Ai from "./components/ai.vue";
 import HeartBeat from "./heartbeat.vue";
 import "swiper/dist/css/swiper.css";
-import "animate.css";
+import "./animate.css";
 
 const root = document.createElement("div");
 document.body.appendChild(root);
