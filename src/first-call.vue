@@ -47,7 +47,7 @@ export default {
   },
   data() {
     return {
-      step: 1,
+      step: 0,
       accepted: false,
       rejected: false,
       halfHeartBreak: false,

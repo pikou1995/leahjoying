@@ -20,7 +20,7 @@
         <span class="animated fadeInUp delay-7s">回忆</span>
         交给那个人
       </p>
-      <p class="animated fadeIn slower delay-8s">但是我不小心碰到机关被困住了</p>
+      <p class="animated fadeIn slower delay-8s">都怪我调皮不小心碰到机关被困住了</p>
       <p class="animated fadeIn slower delay-10s">你能先帮我打开机关吗？</p>
       <p class="animated fadeIn slower delay-12s">(机关在哪呢？开动你的小脑筋找找机关吧~)</p>
     </div>
