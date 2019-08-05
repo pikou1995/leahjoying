@@ -2,7 +2,7 @@
   <div class="guard" :class="{white: step === 0, black: step === 1}">
     <div v-if="step >= 3">
       <p class="animated fadeIn slower">
-        终于有人来了呀！
+        终于等到你！
         <ai @click="step = 4" class="flash delay-1s" v-if="step === 3" />
         <ai @click="step = 5" class="wobble" v-if="step === 4" />
         <ai @click="step = 6" class="shake" v-if="step === 5" />
@@ -11,18 +11,18 @@
       </p>
       <p class="animated fadeIn slower delay-2s">我是猪猪型AI，一直在等待一位有缘人到来</p>
       <p class="animated fadeIn slower delay-4s">
-        主人告诉我，一定要等到那位有缘人
+        主人吩咐过，等到那位有缘人后
       </p>
       <p class="animated fadeIn slower delay-6s">
         把他和
-        <span class="animated heartBeat delay-7s">最心爱女孩</span>
+        <span class="animated heartBeat delay-6s slow">最心爱女孩</span>
         的
         <span class="animated fadeInUp delay-7s">回忆</span>
         交给那个人
       </p>
-      <p class="animated fadeIn slower delay-10s">但是我不小心碰到机关被困住了</p>
-      <p class="animated fadeIn slower delay-12s">你能先帮我打开机关吗~</p>
-      <p class="animated fadeIn slower delay-14s">(机关会在哪呢？开动你的小脑筋找找机关吧~)</p>
+      <p class="animated fadeIn slower delay-8s">但是我不小心碰到机关被困住了</p>
+      <p class="animated fadeIn slower delay-10s">你能先帮我打开机关吗？</p>
+      <p class="animated fadeIn slower delay-12s">(机关在哪呢？开动你的小脑筋找找机关吧~)</p>
     </div>
     <down v-if="accesible" />
   </div>

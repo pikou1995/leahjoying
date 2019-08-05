@@ -2,7 +2,7 @@
   <div class="questions">
     <div class="tips">
       <p class="animated fadeIn">
-        谢谢你，你果然是我在等的那个有缘人！
+        谢谢你，你果然是我在等的那个人！
         <ai :class="fullCheck ? 'bounceOutRight' : 'bounceInDown'" />
       </p>
       <p class="animated fadeIn slower delay-1s">接下来就交给我吧！急急如律令~💪</p>
@@ -11,39 +11,42 @@
       <p class="animated fadeIn slower delay-6s">咦？？？发现一些“很正经的”问题😳</p>
       <p class="animated fadeIn slower delay-7s">好像只有有缘人才能解答呢😂</p>
     </div>
-    <div v-if="step === 1" :key="question.content">
-      <p class="animated fadeIn">{{question.content}}</p>
-      <p class="option" v-for="(o, i) in question.options" :key="o">
-        <label class="animated fadeIn">
-          <input type="checkbox" :value="i" v-model="answers[index]" />
-          {{o}}
-        </label>
-      </p>
-      <p>
-        <button v-if="hasPreQuestion" @click="preQuestion" style="float: left;">&lt;上一题</button>
-        <button v-if="hasNextQuestion" @click="nextQuestion" style="float: right;">下一题&gt;</button>
-        <button v-if="!hasNextQuestion" @click="submit" style="float: right;">提交答案</button>
-      </p>
+    <div class="animated fadeIn shower delay-8s">
+      <div v-if="step !== 1" :key="question.content">
+        <p class="animated fadeIn">{{question.content}}</p>
+        <p class="option" v-for="(o, i) in question.options" :key="o">
+          <label class="animated fadeIn">
+            <input type="checkbox" :value="i" v-model="answers[index]" />
+            {{o}}
+          </label>
+        </p>
+        <p>
+          <button v-if="hasPreQuestion" @click="preQuestion" style="float: left;">&lt;上一题</button>
+          <button v-if="hasNextQuestion" @click="nextQuestion" style="float: right;">下一题&gt;</button>
+          <button v-if="!hasNextQuestion" @click="submit" style="float: right;">提交答案</button>
+        </p>
+      </div>
     </div>
-    <div v-if="step === 2">
+    <div v-if="step === 1">
       <div v-if="fullCheck">
         <p class="animated tada">记忆内核打开啦！🎉🎉🎉</p>
-        <p>
-          我只能陪你到这儿啦
+        <p class="animated fadeIn delay-1s">
+          小主人，很高兴能陪你到这儿
           <ai class="animated bounceInRight"></ai>
         </p>
-        <p class="animated fadeIn delay-2s">接下来还要继续守在这里呢~</p>
-        <p class="animated fadeIn delay-4s">咕力白，祝你一路幸福哟~</p>
+        <p class="animated fadeIn delay-2s">我接下来还要继续守在这里呢</p>
+        <p class="animated fadeIn delay-3s">你快去看看前面是什么吧</p>
+        <p class="animated fadeIn delay-4s">咕力白，祝你幸福哟~</p>
+        <down class="animated slideInUp delay-5s" />
       </div>
-      <div class="animated bounceIn slow" v-else>
-        <p>记忆内核好像不认可这份答案呢，请不要灰心🙂</p>
+      <div v-else class="animated bounceIn">
+        <p>记忆内核好像不认可这份答案呢</p>
         <p>
-          试试
-          <button @click="retry">重新解答</button>
+          不要灰心呦~试试
+          <button @click="retry">重新解答</button>🙂
         </p>
       </div>
     </div>
-    <down v-if="fullCheck" />
   </div>
 </template>
 
@@ -110,7 +113,7 @@ export default {
     retry() {
       this.initAnswers();
       this.index = 0;
-      this.step = 1;
+      this.step = 0;
     },
     submit() {
       let answers = this.answers.filter(
@@ -126,9 +129,6 @@ export default {
   },
   mounted() {
     this.initAnswers();
-    setTimeout(() => {
-      this.step = 1;
-    }, 8000);
   }
 };
 </script>

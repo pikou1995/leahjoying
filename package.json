@@ -1,8 +1,8 @@
 {
   "name": "leahjoying",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "For Ling and Pikou",
+  "main": "webpack.prod.js",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.5",
