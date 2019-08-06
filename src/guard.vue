@@ -7,15 +7,15 @@
         <ai @click="step = 5" class="wobble" v-if="step === 4" />
         <ai @click="step = 6" class="shake" v-if="step === 5" />
         <ai @click="end" class="bounce" v-if="step === 6" />
-        <ai class="bounceOutDown slower" v-if="accesible" />
+        <ai class="bounceOutDown slow" v-if="accesible" />
       </p>
       <p class="animated fadeIn slower delay-2s">我是AI猪猪，一直在等待一位有缘人到来</p>
       <p class="animated fadeIn slower delay-4s">
         主人吩咐过，等到那位有缘人后
       </p>
       <p class="animated fadeIn slower delay-6s">
-        把他和
-        <span class="animated heartBeat delay-6s slow">最心爱女孩</span>
+        把
+        <span class="animated heartBeat delay-6s slow">他和最心爱女孩</span>
         的
         <span class="animated fadeInUp delay-7s">回忆</span>
         交给那个人
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       step: 0,
-      debugStep: 3,
+      // debugStep: 3,
       accesible: false
     };
   },
@@ -47,14 +47,14 @@ export default {
       this.accesible = true;
       this.$emit("next");
     },
-    delay(time = 5000) {
+    delay(time = 3000) {
       return new Promise(resolve => {
         setTimeout(
           () => {
             this.next();
             resolve(true);
           },
-          this.debug ? 1000 : 5000
+          this.debug ? 1000 : time
         );
       });
     }
@@ -64,7 +64,7 @@ export default {
       this.step = this.debugStep;
       return;
     }
-    await this.delay();
+    await this.delay(1000);
     await this.delay();
     await this.delay();
   }
@@ -80,8 +80,8 @@ export default {
 }
 .guard {
   height: 100%;
-  padding-top: 60%;
+  padding-top: 40%;
   text-align: center;
-  transition: background 5s;
+  transition: background 3s;
 }
 </style>

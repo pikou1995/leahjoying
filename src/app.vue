@@ -49,7 +49,7 @@ export default {
         direction: "vertical",
         allowSlideNext: false
       },
-      debugIndex: 6
+      debugIndex: 1
     };
   },
   computed: {
@@ -57,6 +57,7 @@ export default {
       return this.$refs.mySwiper.swiper;
     },
     isDebuging() {
+      // return false;
       return isDebuging();
     }
   },

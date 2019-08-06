@@ -9,9 +9,9 @@
       <p class="animated fadeIn slower delay-2s">开始读取记忆内核🧐......</p>
       <p class="animated bounceIn slow delay-5s">奇怪了，竟然读取失败了😱</p>
       <p class="animated fadeIn slower delay-6s">咦？？？发现一些“很正经的”问题🤔</p>
-      <p class="animated fadeIn slower delay-7s">好像只有有缘人才能解答呢🥺</p>
+      <p class="animated fadeIn slower delay-8s">好像只有你才能解答呢🥺</p>
     </div>
-    <div class="animated fadeIn shower delay-8s">
+    <div class="animated fadeIn shower delay-10s">
       <div v-if="step !== 1" :key="question.content">
         <p class="animated fadeIn">{{question.content}}</p>
         <p class="option" v-for="(o, i) in question.options" :key="o">
@@ -34,7 +34,7 @@
           小主人，很高兴能陪你到这儿
           <ai class="animated bounceInRight"></ai>
         </p>
-        <p class="animated fadeIn delay-2s">我的使命到这里已经结束了</p>
+        <p class="animated fadeIn delay-2s">AI猪猪的使命到这里已经完成了</p>
         <p class="animated fadeIn delay-3s">前面的路需要你自己摸索啦</p>
         <p class="animated fadeIn delay-4s">咕力白，祝你幸福哟~</p>
         <down class="animated slideInUp delay-5s" />
