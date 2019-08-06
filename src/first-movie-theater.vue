@@ -22,7 +22,7 @@
     </div>
     <div class="tc" v-if="videodEnded">
       <p class="animated fadeIn slower">那时第一次鼓起勇气牵了你的手</p>
-      <p class="animated fadeIn slower delay-2s">现在想起来依然会心跳加速
+      <p class="animated fadeIn slower delay-2s">现在依然记得心跳加速的感觉
         <span class="animated heartBeat fast infinite">❤️</span>
       </p>
     </div>

@@ -31,7 +31,7 @@
         <p class="animated fadeIn slower delay-6s">会紧紧结合在一起</p>
         <p class="animated fadeIn slower delay-8s">只是依稀记得当初被你所吸引</p>
         <p class="animated fadeIn slower delay-10s">恍然已习惯了有你的日子</p>
-        <p class="animated fadeIn slower delay-12s">跌跌绊绊一起走到了今天</p>
+        <p class="animated fadeIn slower delay-12s">磕磕碰碰一起走到了今天</p>
       </div>
       <down class="animated slideInUp delay-12s" />
     </div>

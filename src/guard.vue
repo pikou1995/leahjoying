@@ -9,7 +9,7 @@
         <ai @click="end" class="bounce" v-if="step === 6" />
         <ai class="bounceOutDown slower" v-if="accesible" />
       </p>
-      <p class="animated fadeIn slower delay-2s">我是猪猪型AI，一直在等待一位有缘人到来</p>
+      <p class="animated fadeIn slower delay-2s">我是AI猪猪，一直在等待一位有缘人到来</p>
       <p class="animated fadeIn slower delay-4s">
         主人吩咐过，等到那位有缘人后
       </p>

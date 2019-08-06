@@ -34,8 +34,8 @@
           小主人，很高兴能陪你到这儿
           <ai class="animated bounceInRight"></ai>
         </p>
-        <p class="animated fadeIn delay-2s">我的使命到这里已经结束啦</p>
-        <p class="animated fadeIn delay-3s">你快去看看前面是什么吧</p>
+        <p class="animated fadeIn delay-2s">我的使命到这里已经结束了</p>
+        <p class="animated fadeIn delay-3s">前面的路需要你自己摸索啦</p>
         <p class="animated fadeIn delay-4s">咕力白，祝你幸福哟~</p>
         <down class="animated slideInUp delay-5s" />
       </div>
