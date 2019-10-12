@@ -5,6 +5,9 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./"
+    contentBase: ".",
+    historyApiFallback: {
+      rewrites: [{ from: /^\/heart/, to: "/index.html" }]
+    }
   }
 });
